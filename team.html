@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Young Eagles-Team Page</title>
+    <link rel="shortcut icon" type="image/jpg" href="/favicon/android-chrome-512x512.png"/>
+    <script src="https://kit.fontawesome.com/53f7ad8744.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            padding: 20px;
+        }
+
+        /* Fixed Navbar for the Team Page */
+        .team-navbar {
+            width: 100%;
+            background-color: #cce7ff; /* Light blue color */
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            padding: 10px 0;
+        }
+
+        /* Space below the navbar so it doesn't overlap the team content */
+        .team-content {
+            padding-top: 10px;
+            padding: 10px;
+        }
+
+        .team-navbar-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .team-logo a {
+            color: #333;
+            font-size: 24px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .team-nav-links {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        .team-nav-links li {
+            margin-left: 20px;
+        }
+
+        .team-nav-links a {
+            color: #333;
+            text-decoration: none;
+            font-size: 16px;
+            padding: 10px 15px;
+            background-color: white; /* Button-like background */
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        /* Hover effect */
+        .team-nav-links a:hover {
+            background-color: #f0f0f0;
+            color: black;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* When a nav item is clicked */
+        .team-nav-links a.active {
+            background-color: black;
+            color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Responsive for mobile */
+        @media (max-width: 768px) {
+            .team-nav-links {
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: -100%;
+                width: 100%;
+                background-color: #cce7ff;
+                transition: left 0.3s ease;
+            }
+
+            .team-nav-links li {
+                text-align: center;
+                margin: 10px 0;
+            }
+
+            .team-navbar-container.active .team-nav-links {
+                left: 0;
+            }
+        }
+
+        /* Burger Menu for Mobile */
+        .team-burger-menu {
+            display: none;
+            cursor: pointer;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 30px;
+            width: 30px; /* Make it bigger */
+            transition: transform 0.3s ease;
+        }
+
+        @media (max-width: 768px) {
+            .team-burger-menu {
+                display: flex;
+            }
+
+            .team-nav-links {
+                position: absolute;
+                top: 60px;
+                left: -100%;
+                width: 100%;
+                background-color: #cce7ff;
+                transition: left 0.3s ease;
+                flex-direction: column;
+            }
+
+            .team-navbar-container.active .team-nav-links {
+                left: 0;
+            }
+        }
+
+        /* Burger Icon Bars */
+        .team-burger-menu span {
+            width: 30px;
+            height: 4px;
+            background-color: #333;
+            margin: 5px 0;
+            transition: all 0.3s ease;
+        }
+
+        /* When nav links are open (burger icon turns into an 'X') */
+        .team-navbar-container.active .team-burger-menu span:nth-child(1) {
+            transform: rotate(45deg) translateY(10px);
+        }
+
+        .team-navbar-container.active .team-burger-menu span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .team-navbar-container.active .team-burger-menu span:nth-child(3) {
+            transform: rotate(-45deg) translateY(-10px);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .team-grid, .staff-grid {
+            display: grid;
+            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            margin-bottom: 40px;
+        }
+
+        .player, .staff-member {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .player img, .staff-member img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        .player-info, .staff-info {
+            text-align: center;
+        }
+
+        h3 {
+            margin-bottom: 5px;
+            font-size: 18px;
+        }
+
+        p {
+            font-size: 14px;
+            color: #555;
+        }
+
+        /* Buttons Section */
+        .section-buttons {
+            background-color: lightgray;
+            height: 50px;
+            padding: 10px;
+            margin-top: 8%;
+            border-color: black;
+            border-radius: 5px
+        }
+
+        .section-buttons ul {
+            display: flex;
+            justify-content: space-around;
+            font-weight: bold;
+            list-style: none;
+            transition: all 0.3s ease;
+        }
+        
+        .section-button{
+          cursor: pointer;
+          padding: 10px;
+          border-bottom: 2px solid transparent;
+          
+        }
+        .section-button.active {
+            border-bottom: 2px solid black;
+        }
+        main {
+            padding: 20px;
+        }
+
+        /* Hidden sections */
+        .team-section, .staff-section, .age-group-section {
+            display: none;
+        }
+
+        .active-section {
+            display: block;
+        }
+
+        /* Full HD images for the age groups */
+        .age-group-grid {
+            display: grid;
+            gap: 20px;
+            grid-template-columns: 1fr;
+            margin-bottom: 40px;
+        }
+
+        .age-group {
+            text-align: center;
+        }
+
+        .age-group img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .age-group h3 {
+            margin-top: 10px;
+            margin-bottom: 8%;
+            font-size: 24px;
+            color: #333;
+        }
+
+        /* Responsive Design for larger screens */
+        @media (min-width: 768px) {
+            .team-grid, .staff-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            }
+        }
+
+        /* Footer Section */
+        .footer {
+            text-align: center;
+            padding: 30px 0; /* Increased padding for better visibility */
+            background-color: #333;
+            color: white;
+        }
+
+        .footer-icons {
+            display: flex;
+            justify-content: center;
+            gap: 25px; /* Increased spacing */
+            margin-bottom: 20px; /* Larger margin for spacing */
+        }
+
+        .footer-icons a {
+            color: white;
+            font-size: 36px; /* Larger icon size */
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-icons a:hover {
+            color: #f0f0f0;
+        }
+    </style>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/additional/fixture.css">
+</head>
+<body>
+<!-- Fixed Navigation Menu on Top -->
+<!---Navigation Bar-->
+<nav id="navbar" class="">
+    <div class="nav-wrapper">
+      <!-- Navbar Logo -->
+      <div class="logo">
+        <!-- Logo Placeholder for Illustration -->
+        <a href="index.html"><img src="/Young Eagles Academy/images/logoshield.png" alt="Team Logo" class="team-logo"><i>Young Eagles</i></a>
+      </div>
+  
+      <!-- Navbar Links -->
+      <ul id="menu">
+        <li><a href="index.html">Home</a></li><!--
+     --><li><a href="#services">About</a></li><!--
+     --><li><a href="fixtures.html">Fixtures</a></li><!--
+     --><li><a href="team.html">Team</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+  
+  
+  <!-- Menu Icon -->
+  <div class="menuIcon">
+    <span class="icon icon-bars"></span>
+    <span class="icon icon-bars overlay"></span>
+  </div>
+  
+  
+  <div class="overlay-menu">
+    <ul id="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="fixtures.html">Fixtures</a></li>
+        <li><a href="team.html">Team</a></li>
+        <li><a href="index.html#contact-us">Contact</a></li>
+      </ul>
+  </div>
+  
+<!-- Team Navigation (This will appear below the fixed navbar) -->
+<div class="team-content">
+    <!-- Your team page content goes here, such as stats, fixtures, etc. -->
+    <!-- Buttons for Navigation -->
+    <div class="section-buttons">
+      <ul>
+         <li class="section-button" id="age-groups-btn" onclick="showSection('age-groups')">TEAM</li>
+        <li class="section-button active" id="players-btn" onclick="showSection('team')">PLAYERS</li>
+        <li class="section-button" id="staff-btn" onclick="showSection('staff')">STAFF</li>
+      </ul>
+    </div>
+</div>
+
+<!-- Players Section -->
+<section class="team-section active-section" id="team">
+    <h2>Players</h2>
+    <!--
+    <div class="team-grid">
+        <div class="player">
+            <img src="https://via.placeholder.com/100x100" alt="Gianluigi Donnarumma">
+            <div class="player-info">
+                <h3>Gianluigi Donnarumma</h3>
+                <p>Goalkeeper</p>
+            </div>
+        </div>
+        <div class="player">
+            <img src="https://via.placeholder.com/100x100" alt="Matvey Safonov">
+            <div class="player-info">
+                <h3>Matvey Safonov</h3>
+                <p>Goalkeeper</p>
+            </div>
+        </div>
+        <div class="player">
+            <img src="https://via.placeholder.com/100x100" alt="Arnau Tenas">
+            <div class="player-info">
+                <h3>Arnau Tenas</h3>
+                <p>Goalkeeper</p>
+            </div>
+        </div>
+          <div class="player">
+            <img src="https://via.placeholder.com/100x100" alt="Gianluigi Donnarumma">
+            <div class="player-info">
+              <h3>Gianluigi Donnarumma</h3>
+              <p>Goalkeeper</p>
+            </div>
+            </div>
+        <div class="player">
+          <img src="https://via.placeholder.com/100x100" alt="Gianluigi Donnarumma">
+          <div class="player-info">
+            <h3>Gianluigi Donnarumma</h3>
+            <p>Goalkeeper</p>
+          </div>
+        </div>
+        <div class="player">
+          <img src="https://via.placeholder.com/100x100" alt="Gianluigi Donnarumma">
+          <div class="player-info">
+            <h3>Gianluigi Donnarumma</h3>
+            <p>Goalkeeper</p>
+          </div>
+        </div>
+        <div class="player">
+          <img src="https://via.placeholder.com/100x100" alt="Gianluigi Donnarumma">
+          <div class="player-info">
+            <h3>Gianluigi Donnarumma</h3>
+            <p>Goalkeeper</p>
+          </div>
+        </div>
+        <div class="player">
+          <img src="https://via.placeholder.com/100x100" alt="Gianluigi Donnarumma">
+          <div class="player-info">
+            <h3>Gianluigi Donnarumma</h3>
+            <p>Goalkeeper</p>
+          </div>
+        </div>
+        <div class="player">
+          <img src="https://via.placeholder.com/100x100" alt="Gianluigi Donnarumma">
+          <div class="player-info">
+            <h3>Gianluigi Donnarumma</h3>
+            <p>Goalkeeper</p>
+          </div>
+        </div>
+        <div class="player">
+          <img src="https://via.placeholder.com/100x100" alt="Gianluigi Donnarumma">
+          <div class="player-info">
+            <h3>Gianluigi Donnarumma</h3>
+            <p>Goalkeeper</p>
+          </div>
+        </div>
+        <div class="player">
+          <img src="https://via.placeholder.com/100x100" alt="Gianluigi Donnarumma">
+          <div class="player-info">
+            <h3>Gianluigi Donnarumma</h3>
+            <p>Goalkeeper</p>
+          </div>
+        </div>
+        -->
+    </div>
+          <div class="player">
+          <img src="https://via.placeholder.com/100x100" alt="Sample Player Profile">
+          <div class="player-info">
+            <h3>ALL FUTURE PLAYERS </h3>
+            <p>To Be Updated</p>
+            <p>In The MeanTime</p>
+            <a href="#age-groups-btn">VIEW OUR TEAM</a>
+          </div>
+        </div>
+</section>
+
+<!-- Staff Section -->
+<section class="staff-section" id="staff">
+    <h2>Staff</h2>
+    <div class="staff-grid">
+        <div class="staff-member">
+            <img src="https://via.placeholder.com/100x100" alt="Luis Enrique">
+            <div class="staff-info">
+                <h3>Luis Enrique</h3>
+                <p>Coach</p>
+            </div>
+        </div>
+        <div class="staff-member">
+            <img src="https://via.placeholder.com/100x100" alt="Rafel Pol Cabanellas">
+            <div class="staff-info">
+                <h3>Rafel Pol Cabanellas</h3>
+                <p>Assistant Coach</p>
+            </div>
+        </div>
+        <div class="staff-member">
+            <img src="https://via.placeholder.com/100x100" alt="Guillem Hernandez Folguera">
+            <div class="staff-info">
+                <h3>Guillem Hernandez Folguera</h3>
+                <p>Assistant Coach</p>
+            </div>
+        </div>
+        <div class="staff-member">
+            <img src="https://via.placeholder.com/100x100" alt="Joaquin Valdes Fonseca">
+            <div class="staff-info">
+                <h3>Joaquin Valdes Fonseca</h3>
+                <p>Psychologist</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Age Groups Section -->
+<section class="age-group-section" id="age-groups">
+    <h2>OUR TEAMS</h2>
+        <div class="age-group">
+            <img src="images/under17.jpg" alt="U18 Team">
+            <h3>UNDER 13 TEAM</h3>
+        </div>
+        <div class="age-group">
+            <img src="images/under18.jpg" alt="Senior Team">
+            <h3>UNDER 15 TEAM</h3>
+        </div>
+         <div class="age-group-grid">
+        <div class="age-group">
+            <img src="images/inder15.jpg" alt="U16 Team">
+            <h3>UNDER 17 TEAM</h3>
+        </div>
+    </div>
+</section>
+
+  <!-- Footer Section -->
+<footer class="footer-section">
+  <!-- Logos Section -->
+  <div class="logo-container">
+    <img src="/Young Eagles Academy/images/logoshield.png" alt="Team Logo" class="footer-logo">
+  </div>
+  
+  <!-- Social Media Icons & Copyright -->
+  <div class="final-footer">
+    <div class="social-icons">
+      <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="(link unavailable)" target="_blank"><i class="fab fa-twitter"></i></a>
+      <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+    </div>
+    <p>&copy; 2024 Young Eagles Soccer Academy. All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- JavaScript for toggling sections and burger menu -->
+<script>
+    function toggleTeamMenu() {
+        const navbar = document.querySelector('.team-navbar-container');
+        navbar.classList.toggle('active');
+    }
+
+    function showSection(section) {
+        const teamSection = document.getElementById('team');
+        const staffSection = document.getElementById('staff');
+        const ageGroupSection = document.getElementById('age-groups');
+        const playersBtn = document.getElementById('players-btn');
+        const staffBtn = document.getElementById('staff-btn');
+        const ageGroupsBtn = document.getElementById('age-groups-btn');
+
+        // Hide all sections initially
+        teamSection.style.display = 'none';
+        staffSection.style.display = 'none';
+        ageGroupSection.style.display = 'none';
+
+        // Reset button styles
+        playersBtn.classList.remove('active');
+        staffBtn.classList.remove('active');
+        ageGroupsBtn.classList.remove('active');
+
+        // Show the correct section based on the clicked button
+        if (section === 'team') {
+            teamSection.style.display = 'block';
+            playersBtn.classList.add('active');
+        } else if (section === 'staff') {
+            staffSection.style.display = 'block';
+            staffBtn.classList.add('active');
+        } else if (section === 'age-groups') {
+            ageGroupSection.style.display = 'block';
+            ageGroupsBtn.classList.add('active');
+        }
+    }
+
+    // Initially show players section
+    showSection('age-groups');
+</script>
+<script src="main.js"></script>
+</body>
+</html>

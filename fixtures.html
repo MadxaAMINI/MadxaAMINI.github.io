@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title> Young Eagles-Fixtures &amp; Results </title>
+<link rel="shortcut icon" type="image/jpg" href="/favicon/android-chrome-512x512.png"/>
+<style>
+  /* Fixtures Section */
+.fixture-h2{
+        text-align: center;
+        padding: 50px;
+        text-decoration: underline;
+}
+.fixtures-section {
+            width: 100%;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .fixture {
+            border: 2px solid #e5e5e5;
+            border-radius: 10px;
+            margin: 10px;
+            padding: 15px;
+            background-color: #fff;
+            flex: 1 1 100%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease-in-out;
+            max-width: 500px;
+        }
+
+        .fixture:hover {
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .header {
+            background-color: lightcyan;
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+            color: #000;
+            border-radius: 5px 5px 0 0;
+        }
+
+        .score {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 20px 0;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        .team-logo img {
+            width: 50px;
+        }
+
+        .match-info {
+            text-align: center;
+        }
+
+        .match-info p {
+            margin: 5px 0;
+        }
+
+        .report, .tickets {
+            text-align: center;
+            margin: 15px 0;
+        }
+
+        .report button, .tickets button {
+            padding: 10px 20px;
+            background-color: #000;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.2s ease;
+        }
+
+        .report button:hover, .tickets button:hover {
+            background-color: #444;
+        }
+
+        @media (min-width: 768px) {
+            .fixture {
+                flex: 1 1 45%;
+                max-width: none;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .fixture {
+                flex: 1 1 30%;
+                max-width: none;
+            }
+        }
+
+</style>
+...
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/additional/fixture.css">
+</head>
+<body>
+<!---Navigation Bar-->
+<nav id="navbar" class="">
+  <div class="nav-wrapper">
+    <!-- Navbar Logo -->
+    <div class="logo">
+      <!-- Logo Placeholder for Illustration -->
+      <a href="#home"><img src="/Young Eagles Academy/images/logoshield.png" alt="Team Logo" class="team-logo"><i>Young Eagles</i></a>
+    </div>
+
+    <!-- Navbar Links -->
+    <ul id="menu">
+      <li><a href="index.html">Home</a></li><!--
+   --><li><a href="index.html #about">About</a></li><!--
+   --><li><a href="fixtures.html">FIXTURES</a></li><!--
+   --><li><a href="team.html">Team</a></li>
+      <li><a href="index.html#contact-us">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+
+<!-- Menu Icon -->
+<div class="menuIcon">
+  <span class="icon icon-bars"></span>
+  <span class="icon icon-bars overlay"></span>
+</div>
+
+
+<div class="overlay-menu">
+  <ul id="menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="fixtures.html">Fixture</a></li>
+      <li><a href="team.html">Team</a></li>
+      <li><a href="index.html#contact-us">Contact</a></li>
+    </ul>
+</div>
+    <nav class="navbar">
+        <ul class="navbar-menu">
+            <li class="nav-item" data-target="fixtures-section">FIXTURES</li>
+            <li class="nav-item" data-target="results-section">RESULTS</li>
+            <li class="nav-item" data-target="league-section">LEAGUE</li>
+        </ul>
+    </nav>
+
+    <div class="content-container">
+        <!-- Fixtures Section -->
+        <div class="content-section" id="fixtures-section" style="display: block;">
+            <h2>FIXTURES</h2>
+            
+                <section>
+ 
+                  <div class="fixtures-section">
+                    <!-- Last Match -->
+                    <div class="fixture">
+                      <div class="header">LAST MATCH</div>
+                      <div class="score">
+                        <div class="team-logo">
+                          <img src="/Young Eagles Academy/images/logoshield.png" alt="Young Eagles">
+                          <p>Young Eagles</p>
+                        </div>
+                        <div>2 - 2</div>
+                        <div class="team-logo">
+                          <img src="/Young Eagles Academy/images/logo.png" alt="Skyblue">
+                          <p>Skyblue</p>
+                        </div>
+                      </div>
+                      <div class="match-info">
+                        <p>Friendly Match</p>
+                        <p>21 Sep 15:00</p>
+                        <p>Gwanzura Stadium</p>
+                      </div>
+                      <div class="report">
+                        <button>View Matches</button>
+                      </div>
+                    </div>
+            
+                    <!-- Next Match -->
+                    <div class="fixture">
+                      <div class="header">NEXT MATCH</div>
+                      <div class="score">
+                        <div class="team-logo">
+                          <img src="/Young Eagles Academy/images/logo.png" alt="Black Sky">
+                          <p>Black Sky</p>
+                        </div>
+                        <div>vs</div>
+                        <div class="team-logo">
+                          <img src="/Young Eagles Academy/images/logoshield.png" alt="Young Eagles">
+                          <p>Young Eagles</p>
+                        </div>
+                      </div>
+                      <div class="match-info">
+                        <p>Friendly Match</p>
+                        <p>Saturday 5th Oct 15:00</p>
+                        <p>National Sports Stadium</p>
+                      </div>
+                     <!-- <div class="tickets">
+                        <a href="fixtures.html"><button>View Fixtures</button></a>
+                      </div>--->
+                    </div>
+                  </div>
+                </section>
+            <div class="flex-container">
+                <!-- Fixture 1: Last Match -->
+                <div class="match-box last-match" data-result="win">
+                    <h3 class="match-heading">Last Match</h3>
+                    <div class="team-container">
+                        <div class="team">
+                            <img src="/Young Eagles Academy/images/logoshield.png" alt="Team 1 Logo" class="team-logo">
+                            <p>Young Eagles</p>
+                        </div>
+                        <div class="score">2 - 1</div>
+                        <div class="team">
+                            <img src="/Young Eagles Academy/images/logo.png" alt="Team 2 Logo" class="team-logo">
+                            <p>Skyblue</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fixture 2 -->
+                <div class="match-box upcoming-match" data-result="">
+                    <h3>Fixture 2</h3>
+                    <div class="team-container">
+                        <div class="team">
+                            <img src="/Young Eagles Academy/images/logoshield.png" alt="Team 3 Logo" class="team-logo">
+                            <p>Young Eagles</p>
+                        </div>
+                        <div class="score">VS</div>
+                        <div class="team">
+                            <img src="/Young Eagles Academy/images/logo.png" alt="Team 4 Logo" class="team-logo">
+                            <p>Team 4</p>
+                        </div>
+                    </div>
+                </div>
+                
+              <!-- Fixture 4 -->
+                 <div class="match-box upcoming-match" data-result="">
+                    <h3>Fixture 2</h3>
+                       <div class="team-container">
+                          <div class="team">
+                    <img src="/Young Eagles Academy/images/logoshield.png" alt="Team 3 Logo" class="team-logo">
+                    <p>Young Eagles</p>
+              </div>
+                 <div class="score">VS</div>
+              <div class="team">
+            <img src="/Young Eagles Academy/images/logo.png" alt="Team 4 Logo" class="team-logo">
+                <p>Team 4</p>
+                     </div>
+                  </div>
+                   </div>
+
+                <!-- Fixture 3 -->
+                <div class="match-box upcoming-match" data-result="">
+                    <h3>Fixture 3</h3>
+                    <div class="team-container">
+                        <div class="team">
+                            <img src="/Young Eagles Academy/images/logo.png" alt="Team 5 Logo" class="team-logo">
+                            <p>Team 5</p>
+                        </div>
+                        <div class="score">VS</div>
+                        <div class="team">
+                            <img src="/Young Eagles Academy/images/logoshield.png" alt="Team 6 Logo" class="team-logo">
+                            <p>Young Eagles</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Results Section -->
+        <div class="content-section" id="results-section" style="display: none;">
+            <h2>Results</h2>
+            <div class="flex-container">
+                <!-- Played Match 1 -->
+                <div class="match-box played-match" data-result="win">
+                    <h3>Played Match 1</h3>
+                    <div class="team-container">
+                        <div class="team">
+                            <img src="/Young Eagles Academy/images/logoshield.png" alt="Team 7 Logo" class="team-logo">
+                            <p>Young Eagles</p>
+                        </div>
+                        <div class="score">2 - 0</div>
+                        <div class="team">
+                            <img src="/Young Eagles Academy/images/logo.png" alt="Team 8 Logo" class="team-logo">
+                            <p>Team 8</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Played Match 2 -->
+                <div class="match-box played-match" data-result="draw">
+                    <h3>Played Match 2</h3>
+                    <div class="team-container">
+                        <div class="team">
+                            <img src="/Young Eagles Academy/images/logo.png" alt="Team 9 Logo" class="team-logo">
+                            <p>Team 9</p>
+                        </div>
+                        <div class="score">1 - 1</div>
+                        <div class="team">
+                            <img src="/Young Eagles Academy/images/logoshield.png" alt="Team 10 Logo" class="team-logo">
+                            <p>Young Eagles</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Played Match 3 -->
+                <div class="match-box played-match" data-result="lose">
+                    <h3>Played Match 3</h3>
+                    <div class="team-container">
+                        <div class="team">
+                            <img src="/Young Eagles Academy/images/logoshield.png" alt="Team 11 Logo" class="team-logo">
+                            <p>Young Eagles</p>
+                        </div>
+                        <div class="score">0 - 3</div>
+                        <div class="team">
+                            <img src="/Young Eagles Academy/images/logo.png" alt="Team 12 Logo" class="team-logo">
+                            <p>Team 12</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Played Match 4 -->
+                <div class="match-box played-match" data-result="win">
+                    <h3>Played Match 4</h3>
+                    <div class="team-container">
+                        <div class="team">
+                            <img src="/Young Eagles Academy/images/logoshield.png" alt="Team 13 Logo" class="team-logo">
+                            <p>Young Eagles</p>
+                        </div>
+                        <div class="score">2 - 1</div>
+                        <div class="team">
+                            <img src="/Young Eagles Academy/images/logo.png" alt="Team 14 Logo" class="team-logo">
+                            <p>Team 14</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- League Section with Join Us Button -->
+        <div class="content-section" id="league-section" style="display: none;">
+            <h2>League</h2>
+            <p style="text-align: center; font-size: 1.2em;">Unfortunately we aren't enrolled in any league at the moment.</p>
+            <p style="text-align: center; font-size: 0.9em; color: #aaa;">Join Us To See Us Progress Into The League.</p>
+            <div style="text-align: center;">
+                <button id="join-us-btn" class="btn">Join Us</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pop-up Modal -->
+    <div id="popup-modal" class="popup-modal">
+        <div class="popup-content">
+            <a href="index.html#contact-us"><button class="popup-btn" id="contact-us-btn">Contact Us</button></a>
+            <button class="popup-btn" id="email-us-btn">Email Us</button>
+            <button class="popup-btn" id="cancel-btn">Cancel</button>
+        </div>
+    </div>
+
+<!-- Footer Section -->
+<footer class="footer-section">
+  <!-- Logos Section -->
+  <div class="logo-container">
+    <img src="/Young Eagles Academy/images/logoshield.png" alt="Team Logo" class="footer-logo">
+  </div>
+  
+  <!-- Social Media Icons & Copyright -->
+  <div class="final-footer">
+    <div class="social-icons">
+      <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="(link unavailable)" target="_blank"><i class="fab fa-twitter"></i></a>
+      <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+    </div>
+    <p>&copy; 2024 Young Eagles Soccer Academy. All rights reserved.</p>
+  </div>
+</footer>
+
+    <script src="main.js"></script>
+    <script src="/additional/main.js"></script>
+</body>
+</html>

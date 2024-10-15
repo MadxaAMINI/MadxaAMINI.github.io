@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Primary Meta Tags -->
+    <title>Young Eagles Academy</title>
+    <link rel="shortcut icon" type="image/jpg" href="/favicon/android-chrome-512x512.png"/>
+    <meta name="title" content="Young Eagles Academy - Soccer Team Fixtures, Results, and League Information">
+    <meta name="description" content="Welcome to Young Eagles Academy! Stay updated with the latest fixtures, match results, and league progress of our soccer academy. Join us to see our progress into the league.">
+
+    <!-- SEO Keywords -->
+    <meta name="keywords" content="Young Eagles Academy, Soccer team, Football team, Fixtures, Match Results, League Progress, Join Soccer Academy, Junior Football Academy">
+    
+    <!-- Author -->
+    <meta name="author" content="Young Eagles Academy">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.youngeaglesacademy.com">
+    <meta property="og:title" content="Young Eagles Academy - Soccer Team Fixtures, Results, and League Information">
+    <meta property="og:description" content="Stay updated with Young Eagles Academy's latest soccer fixtures, match results, and league status. Join us and see us progress into the league.">
+    <meta property="og:image" content="https://www.youngeaglesacademy.com/assets/images/team-logo.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.youngeaglesacademy.com">
+    <meta property="twitter:title" content="Young Eagles Academy - Soccer Team Fixtures, Results, and League Information">
+    <meta property="twitter:description" content="Stay updated with Young Eagles Academy's latest soccer fixtures, match results, and league status. Join us and see us progress into the league.">
+    <meta property="twitter:image" content="https://www.youngeaglesacademy.com/assets/images/team-logo.png">
+
+    <!-- Canonical URL (helps avoid duplicate content issues) -->
+    <link rel="canonical" href="https://www.youngeaglesacademy.com">
+
+    <!-- Robots Meta Tags (help with crawling and indexing) -->
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow">
+    <meta name="bingbot" content="index, follow">
+
+    <!-- Favicon -->
+    <link rel="icon" href="https://www.youngeaglesacademy.com/assets/images/favicon.ico" type="image/x-icon">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="style.css">
+</head>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/53f7ad8744.js" crossorigin="anonymous"></script>
+    <style>
+      * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f7f7f;
+}
+
+
+/* Hero Section */
+.hero {
+    background: url('images/footballfield1.jpg') no-repeat center center/cover;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(203, 161, 161,);
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero button {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: lightsalmon;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.hero button:hover {
+    background-color: #d97f00;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.hero-content p{
+  color: darkturquoise;
+};
+
+/* Featured Section */
+.featured .container {
+    display: flex;
+    justify-content: space-around;
+    padding: 50px;
+}
+
+.featured article {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    text-align: center;
+    padding: 20px;
+}
+
+.featured article img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+}
+
+/* Trending Videos Section */
+.trending {
+    text-align: center;
+    padding: 50px;
+}
+
+.trending h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.videos {
+    display: flex;
+    justify-content: space-around;
+}
+
+.videos .video {
+    width: 30%;
+}
+
+.videos .video img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* Fixtures Section */
+.fixture-h2{
+        text-align: center;
+        padding: 50px;
+}
+.fixtures-section {
+            width: 100%;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .fixture {
+            border: 2px solid #e5e5e5;
+            border-radius: 10px;
+            margin: 10px;
+            padding: 15px;
+            background-color: #fff;
+            flex: 1 1 100%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease-in-out;
+            max-width: 500px;
+        }
+
+        .fixture:hover {
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .header {
+            background-color: lightcyan;
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+            color: #000;
+            border-radius: 5px 5px 0 0;
+        }
+
+        .score {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 20px 0;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        .team-logo img {
+            width: 50px;
+        }
+
+        .match-info {
+            text-align: center;
+        }
+
+        .match-info p {
+            margin: 5px 0;
+        }
+
+        .report, .tickets {
+            text-align: center;
+            margin: 15px 0;
+        }
+
+        .report button, .tickets button {
+            padding: 10px 20px;
+            background-color: #000;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.2s ease;
+        }
+
+        .report button:hover, .tickets button:hover {
+            background-color: #444;
+        }
+
+        @media (min-width: 768px) {
+            .fixture {
+                flex: 1 1 45%;
+                max-width: none;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .fixture {
+                flex: 1 1 30%;
+                max-width: none;
+            }
+        }
+
+                /* Full HD images for the age groups */
+        .age-group-grid {
+            display: grid;
+            gap: 20px;
+            grid-template-columns: 1fr;
+            margin-bottom: 40px;
+        }
+
+        .age-group {
+            text-align: center;
+        }
+
+        .age-group img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .age-group h3 {
+            margin-top: 10px;
+            font-size: 24px;
+            color: #333;
+        }
+        /* Full HD images for the age groups */
+        .age-group-grid {
+            display: grid;
+            gap: 20px;
+            grid-template-columns: 1fr;
+            margin-bottom: 40px;
+        }
+
+        .age-group {
+            text-align: center;
+        }
+
+        .age-group img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .age-group h3 {
+            margin-top: 10px;
+            font-size: 24px;
+            color: #333;
+        }
+
+        
+
+/* Footer */
+footer {
+    text-align: center;
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #d90000;
+        position: absolute;
+        top: 60px;
+        left: -100%;
+        transition: 0.
+        5s ease-in-out;
+    }
+
+    .nav-links.active {
+        left: 0;
+    }
+
+    .burger-menu {
+        display: flex;
+    }
+
+    .burger-menu.toggle span:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 5px);
+    }
+
+    .burger-menu.toggle span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .burger-menu.toggle span:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -5px);
+    }
+
+    .featured .container {
+        flex-direction: column;
+    }
+
+    .featured article {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .videos {
+        flex-direction: column;
+    }
+
+    .videos .video {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+
+  </style>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="/additional/fixture.css">
+<body>
+
+<!---Navigation Bar-->
+<nav id="navbar" class="">
+  <div class="nav-wrapper">
+    <!-- Navbar Logo -->
+    <div class="logo">
+      <!-- Logo Placeholder for Illustration -->
+      <a href="#home"><img src="/Young Eagles Academy/images/logoshield.png" alt="Team Logo" class="team-logo"><i>Young Eagles</i></a>
+    </div>
+
+    <!-- Navbar Links -->
+    <ul id="menu">
+      <li><a href="#home">Home</a></li><!--
+   --><li><a href="#about">About</a></li><!--
+   --><li><a href="fixtures.html">Fixtures</a></li><!--
+   --><li><a href="team.html">Team</a></li>
+      <li><a href="#contact-us">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+
+<!-- Menu Icon -->
+<div class="menuIcon">
+  <span class="icon icon-bars"></span>
+  <span class="icon icon-bars overlay"></span>
+</div>
+
+
+<div class="overlay-menu">
+  <ul id="menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="fixtures.html">Fixture</a></li>
+      <li><a href="team.html">Team</a></li>
+      <li><a href="#contact-us">Contact</a></li>
+    </ul>
+</div>
+    <!-- Hero Section -->
+    <section class="hero" id="highlights" id="home">
+         <div class="hero-content">
+            <h1>Young Eagles Academy</h1>
+            <div style="font-size: 50px;">
+            <p>Where Passion Meets Opportunity, Young Eagles Academy Invites You</p>
+            <p>To Share In The Excitemement of Professional Soccer.</p>
+            <p>Aiming Higher To Become The Next Big Team both Locally</p>
+            <p>And Globally</p>
+            <a href="#contact-us"><button style="border-radius: 7px;">Join Us</button></a>
+         </div>
+        </div>
+    </section>
+    
+ <section id="about-us" style>
+    <div class="about-content">
+      <h1 class="zoom-in color-shift">Young Eagles Academy</h1>
+      <p class="team-history color-shift">
+        Established in 2002, Young Eagles Academy has always been a symbol of passion, teamwork, and perseverance.
+        Our journey from a local club to competing in top leagues showcases the hard work and dedication of every player, 
+        coach, and supporter. With multiple championships under our belt, we strive not just to win, but to inspire 
+        the next generation of soccer talent.
+      </p>
+
+      <div class="about-images">
+        <img src="/Young Eagles Academy/images/footballfield1.jpg" alt="Team Celebration" class="hover-zoom">
+        <img src="/Young Eagles Academy/images/under18.jpg" alt="Championship Victory" class="hover-zoom">
+      </div>
+
+      <blockquote class="motto color-shift">
+        "More than a team, a family with a purpose. Together we rise, together we conquer."
+      </blockquote>
+    </div>
+  </section>
+
+<!-- Age Groups Section -->
+<section class="age-group-section" id="age-groups" style="margin-top: 8%">
+    <h2>OUR PRIDE</h2>
+    <div class="age-group-grid">
+        <div class="age-group">
+            <img src="images/inder15.jpg" alt="U16 Team">
+            <h3>Under 16 Team</h3>
+        </div>
+          <div class="report">
+             <a href="team.html"><button>VIEW  TEAM</button>
+          </div>
+          </a>
+</div>
+</section>
+  
+
+    <section>
+        <h2 class="fixture-h2">Fixtures</h2>
+ <div class="fixtures-section">
+        <!-- Last Match -->
+        <div class="fixture">
+            <div class="header">LAST MATCH</div>
+            <div class="score">
+                <div class="team-logo">
+                    <img src="/Young Eagles Academy/images/logoshield.png" alt="Young Eagles">
+                    <p>Young Eagles</p>
+                </div>
+                <div>2 - 2</div>
+                <div class="team-logo">
+                    <img src="/Young Eagles Academy/images/logo.png" alt="Skyblue">
+                    <p>Skyblue</p>
+                </div>
+            </div>
+            <div class="match-info">
+                <p>Friendly Match</p>
+                <p>Saturday 28th Sep 15:00</p>
+                <p>Gwanzura Stadium</p>
+            </div>
+            <div class="report">
+                <a href="fixtures.html #results-section"><button>Matches</button></a>
+            </div>
+        </div>
+
+        <!-- Next Match -->
+        <div class="fixture">
+            <div class="header">NEXT MATCH</div>
+            <div class="score">
+                <div class="team-logo">
+                    <img src="/Young Eagles Academy/images/logo.png" alt="Black Sky">
+                    <p>Black Sky</p>
+                </div>
+                <div>vs</div>
+                <div class="team-logo">
+                    <img src="/Young Eagles Academy/images/logoshield.png" alt="Young Eagles">
+                    <p>Young Eagles</p>
+                </div>
+            </div>
+            <div class="match-info">
+                <p>Friendly Match</p>
+                <p>Saturday 5th Oct 15:00</p>
+                <p>National Sports Stadium</p>
+            </div>
+            <div class="tickets">
+                <a href="fixtures.html"><button>View Fixtures</button></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+    <!--Aims & Philosophy--->
+    <section id="about">
+<header>
+    <div class="header-content" id="about">
+      <h1>Our Commitment to Excellence</h1>
+    </div>
+  </header>
+
+  <main>
+    <!-- Aims Section -->
+    <section class="aims">
+      <div class="container">
+        <h2 class="section-title">Aims</h2>
+        <div class="card">
+          <div class="icon-container">
+            <img src="/Young Eagles Academy/images/goal.png" alt="Aims Icon">
+          </div>
+          <h3>Achieve Competitive Success</h3>
+          <p>Our aim is to consistently compete at the highest level of football, striving for league titles and cup victories every season.</p>
+        </div>
+        
+        <div class="card">
+          <div class="icon-container">
+            <img src="/Young Eagles Academy/images/goal.png" alt="Aims Icon">
+            <h3>Facilitate Affordable Transfers</h3>
+            <p>To facilitate transfers of soccer players from one team to another on an agreed purchase amount and to eradicate poverty within the  community .</p>
+          </div></p>
+        </div>
+        
+        <div class="card">
+            <div class="icon-container">
+             <img src="/Young Eagles Academy/images/progress.png" alt="Development Icon">
+              </div>
+              <h3>Raise Awareness</h3>
+         <p>To offer awareness in drug and substance use
+To avoid early marriages and school dropouts
+</p> </div>
+        
+        <div class="card">
+          <div class="icon-container">
+            <img src="/Young Eagles Academy/images/progress.png" alt="Development Icon">
+          </div>
+          <h3>Develop World-Class Talent</h3>
+          <p>We invest in youth development programs, nurturing future stars of the game to ensure our long-term success on the pitch.</p>
+        </div>
+      </div>
+    </section>
+    
+
+    <!-- Vision Section -->
+    <section class="vision">
+      <div class="container">
+        <h2 class="section-title">Vision</h2>
+        <div class="vision-content">
+          <p>Our vision is to build a club that is respected both locally and globally, known for its integrity, excellence, and its contribution to the sport.</p>
+          <p>We aspire to lead both on and off the pitch, setting standards in football management, community engagement, and sustainability.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Philosophy Section -->
+    <section class="philosophy">
+      <div class="container">
+        <h2 class="section-title">Philosophy</h2>
+        <div class="card philosophy-card">
+          <h3>Attacking Football</h3>
+          <p>We believe in playing an exciting, attacking brand of football that excites the fans and embodies the spirit of the game.</p>
+        </div>
+        <div class="card philosophy-card">
+          <h3>Community-Driven</h3>
+          <p>Football is more than just a game; it’s a community. Our philosophy is rooted in giving back and engaging with our supporters.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+   </section>
+   
+  <!-- Contact Us Section -->
+  <section id="contact-us">
+    <div class="contact-container">
+      <h2>JOIN THE EAGLE NEST</h2>
+      <h2>CONTACT US</h2>
+      <div class="contact-options">
+
+        <!-- General Contact Form -->
+        <div class="contact-form-box">
+          <h3>General Information</h3>
+          <form id="general-contact-form" class="contact-form">
+            <input type="text" id="name" name="name" placeholder="Your Name" required />
+            <input type="email" id="email" name="email" placeholder="Your Email" required />
+            <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+            <button type="submit" class="submit-btn">Send Message</button>
+          </form>
+        </div>
+
+        <!-- Sponsor Form -->
+        <div class="contact-form-box">
+          <h3>Become a Sponsor</h3>
+          <form id="sponsor-form" class="contact-form">
+            <input type="text" id="sponsor-name" name="name" placeholder="Your Name" required />
+            <input type="email" id="sponsor-email" name="email" placeholder="Your Email" required />
+            <textarea id="sponsor-message" name="message" rows="5" placeholder="Sponsorship Details" required></textarea>
+            <button type="submit" class="sponsor-btn">Send Sponsor Inquiry</button>
+          </form>
+        </div>
+
+      </div>
+
+      <!-- Address and Phone Number -->
+      <div class="contact-info">
+        <p class="address">123 Soccer Avenue, Cityville, USA</p>
+        <p class="phone">+263 (781) 571-777</p>
+      </div>
+    </div>
+  </section>
+
+<!-- Footer Section -->
+<footer class="footer-section">
+  <!-- Logos Section -->
+  <div class="logo-container">
+    <img src="/Young Eagles Academy/images/logoshield.png" alt="Team Logo" class="footer-logo">
+  </div>
+  
+  <!-- Social Media Icons & Copyright -->
+  <div class="final-footer">
+    <div class="social-icons">
+      <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="(link unavailable)" target="_blank"><i class="fab fa-twitter"></i></a>
+      <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+    </div>
+    <p>&copy; 2024 Young Eagles Soccer Academy. All rights reserved.</p>
+  </div>
+</footer>
+  <script src="main.js"></script>
+</body>
+</html>
